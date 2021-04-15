@@ -21,6 +21,14 @@
   --grey-bg-color: #f5f4fa;
   --main-font-family: 'Roboto', sans-serif;
 }
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 body {
   background-color: var(--primary-white-color);
   color: var(--primary-text-color);
@@ -29,26 +37,95 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-.headline {
-  display: none;
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  outline: 2px solid tomato;
+}
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
 .list {
   list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 .link {
   text-decoration: none;
 }
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
 /* навигация сайта */
+.page-header {
+  height: 80px;
+}
+
+.page-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.page-header .link {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .logo {
-  color: #2196f3;
+  color: var(--accent-color);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+
+  margin-right: 93px;
+}
+.nav {
+  display: flex;
+  align-items: center;
 }
 .logo-header-word {
   color: #000000;
+}
+.site-nav {
+  display: flex;
+}
+.site-nav-item:not(:last-child) {
+  margin-right: 50px;
 }
 .site-nav .link {
   color: var(--title-text-color);
@@ -63,6 +140,12 @@ body {
 .site-nav .link.current {
   color: var(--accent-color);
 }
+.contact {
+  display: flex;
+}
+.contact-item:not(:last-child) {
+  margin-right: 50px;
+}
 .contact .contact-link {
   color: var(--primary-text-color);
   font-weight: 500;
@@ -76,9 +159,11 @@ body {
 /* Герой */
 .hero {
   background-color: var(--secondary-bg-color);
+  width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
 }
-.hero-text {
-  text-align: center;
+.hero-button {
   letter-spacing: 0.06em;
   color: var(--primary-white-color);
 }
@@ -88,16 +173,36 @@ body {
   font-size: 44px;
   line-height: 1.36;
   text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--primary-white-color);
 }
 .hero .hero-button {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   display: flex;
+  border: 0;
+  max-width: 200px;
+  max-height: 50px;
   align-items: center;
   background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
 }
 /* Преимущества */
+.section-advantage {
+  padding-bottom: 0;
+}
+.advantage-item {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 4 * 30px) / 4);
+}
 .advantage .advantage-title {
   font-size: 14px;
   line-height: 1.14;
@@ -105,6 +210,8 @@ body {
   color: var(--title-text-color);
   font-family: var(--main-font-family);
   font-weight: 700;
+
+  margin-bottom: 10px;
 }
 /* Примеры работ и команда h2 */
 .section .section-title {
@@ -112,33 +219,67 @@ body {
   line-height: 1.17;
   text-align: center;
   color: var(--title-text-color);
+
+  margin-bottom: 50px;
+}
+
+.list-examples {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 3 * 30px) / 3);
 }
 /* Команда */
 .command {
   background-color: var(--grey-bg-color);
 }
+.img-card {
+  margin-bottom: 30px;
+}
 .list .list-card {
   background-color: var(--primary-white-color);
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 4 * 30px) / 4);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .list .list-caption {
   color: var(--title-text-color);
+  margin-bottom: 10px;
+  text-align: center;
 }
 .list-card .card-info {
   font-size: 16px;
   line-height: 1.19;
 }
+.list-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 /* Подвал */
 .footer {
   background-color: var(--secondary-bg-color);
+  width: 1600px;
+  /* height: 252px; */
+}
+.logo-footer {
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 .logo-footer-word {
-  color: #ffffff;
+  color: var(--primary-white-color);
 }
 .address {
   font-style: inherit;
 }
 .list .list-link {
   color: rgba(100%, 100%, 100%, 60%);
+}
+.list .list-link:hover,
+.list-link:hover {
+  color: var(--primary-white-color);
 }
 .list .list-address {
   color: var(--primary-white-color);
@@ -156,7 +297,7 @@ body {
 .btn:hover,
 .btn:focus {
   background-color: var(--accent-color);
-  color: #ffffff;
+  color: var(--primary-white-color);
 }
 .porfolio-title {
   font-weight: 700;
