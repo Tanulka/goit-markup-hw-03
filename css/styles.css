@@ -159,9 +159,17 @@ img {
 /* Герой */
 .hero {
   background-color: var(--secondary-bg-color);
-  width: 1600px;
   margin-right: auto;
   margin-left: auto;
+
+  height: 600px;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 .hero-button {
   letter-spacing: 0.06em;
@@ -183,14 +191,12 @@ img {
   line-height: 1.87;
   display: flex;
   border: 0;
-  max-width: 200px;
-  max-height: 50px;
   align-items: center;
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 
-  padding: 10px;
+  padding: 10px 32px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -261,18 +267,21 @@ img {
 /* Подвал */
 .footer {
   background-color: var(--secondary-bg-color);
-  width: 1600px;
-  /* height: 252px; */
+  height: 252px;
 }
-.logo-footer {
-  margin-top: 60px;
-  margin-bottom: 20px;
+.footer .container {
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .logo-footer-word {
   color: var(--primary-white-color);
 }
 .address {
   font-style: inherit;
+}
+.address .list {
+  margin-top: 20px;
 }
 .list .list-link {
   color: rgba(100%, 100%, 100%, 60%);
@@ -285,6 +294,14 @@ img {
   color: var(--primary-white-color);
 }
 /* Портфолио */
+.btn-set {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.list-filter:not(:last-child) {
+  margin-right: 8px;
+}
 .btn {
   background-color: var(--grey-bg-color);
   color: var(--title-text-color);
@@ -293,7 +310,12 @@ img {
   line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
+  border: 0;
+  border-radius: 4px;
+
+  padding: 6px 22px;
 }
+
 .btn:hover,
 .btn:focus {
   background-color: var(--accent-color);
@@ -305,9 +327,25 @@ img {
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--title-text-color);
+  margin-left: 24px;
+  margin-bottom: 4px;
 }
 .portfolio-text {
   font-size: 16px;
   line-height: 1.87;
   color: var(--primary-text-color);
+
+  margin-bottom: 20px;
+  margin-left: 24px;
+}
+
+.portfolio-item {
+  background: var(--primary-white-color);
+  border: 1px solid #eeeeee;
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 3 * 30px) / 3);
+}
+.portfolio-image {
+  margin-bottom: 20px;
 }
