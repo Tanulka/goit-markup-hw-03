@@ -87,7 +87,6 @@ img {
 }
 /* навигация сайта */
 .page-header {
-  height: 80px;
   border: 1px solid #ececec;
 }
 
@@ -99,8 +98,8 @@ img {
 }
 
 .page-header .link {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 24px;
+  padding-bottom: 25px;
 }
 
 .logo {
@@ -237,9 +236,6 @@ img {
 .command {
   background-color: var(--grey-bg-color);
 }
-.img-card {
-  margin-bottom: 30px;
-}
 .list .list-card {
   background-color: var(--primary-white-color);
   margin-left: 30px;
@@ -258,18 +254,17 @@ img {
   font-size: 16px;
   line-height: 1.19;
 }
+.text-card {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .list-text {
   text-align: center;
-  margin-bottom: 30px;
 }
 
 /* Подвал */
 .footer {
   background-color: var(--secondary-bg-color);
-  height: 252px;
-}
-.footer .container {
-  height: 100%;
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -282,6 +277,9 @@ img {
 .address .list {
   margin-top: 20px;
 }
+.list-address:not(:last-child) {
+  margin-bottom: 9px;
+}
 .list .list-link {
   color: rgba(100%, 100%, 100%, 60%);
 }
@@ -289,7 +287,7 @@ img {
 .list-link:hover {
   color: var(--primary-white-color);
 }
-.list .list-address {
+.list .list-not-link {
   color: var(--primary-white-color);
 }
 /* Портфолио */
@@ -320,31 +318,31 @@ img {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
 }
+.list-portfolio {
+  padding: 20px 0 20px 24px;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+}
 .porfolio-title {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--title-text-color);
-  margin-left: 24px;
+
   margin-bottom: 4px;
 }
 .portfolio-text {
   font-size: 16px;
   line-height: 1.87;
   color: var(--primary-text-color);
-
-  margin-bottom: 20px;
-  margin-left: 24px;
 }
 
 .portfolio-item {
   background: var(--primary-white-color);
-  border: 1px solid #eeeeee;
+
   margin-left: 30px;
   margin-top: 30px;
   flex-basis: calc((100% - 3 * 30px) / 3);
-}
-.portfolio-image {
-  margin-bottom: 20px;
 }
